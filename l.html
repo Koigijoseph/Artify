@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artify - AI Image Generator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #1c1c1f;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #e1e1e6;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background-color: #2b2b2f;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #e1e1e6;
+      margin-bottom: 1.2rem;
+      font-size: 1.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    label {
+      font-size: 1rem;
+      color: #b0b0b5;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: 1px solid #3c3c40;
+      background-color: #333338;
+      color: #e1e1e6;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus {
+      border-color: #007BFF;
+    }
+
+    .generate-btn {
+      display: block;
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      padding: 0.8rem;
+      font-size: 1.05rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .generate-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .result-container {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .result-image {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Artify - AI Image Generator</h1>
+    <form id="imageForm">
+      <label for="prompt">Enter a prompt for the AI image:</label>
+      <input type="text" id="prompt" placeholder="E.g., 'A futuristic city skyline at sunset'" required>
+      <button class="generate-btn" type="submit">Generate Image</button>
+    </form>
+
+    <div class="result-container" id="resultContainer">
+      <!-- AI-generated image will appear here -->
+    </div>
+  </div>
+
+  <footer>
+    <p>Powered by AI Art Generators</p>
+  </footer>
+
+  <script>
+    document.getElementById('imageForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const prompt = document.getElementById('prompt').value;
+      const resultContainer = document.getElementById('resultContainer');
+
+      // Simulating the image fetch and display
+      resultContainer.innerHTML = '<p>Generating your image...</p>';
+
+      setTimeout(() => {
+        resultContainer.innerHTML = '<img class="result-image" src="https://via.placeholder.com/500" alt="Generated Image">';
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
